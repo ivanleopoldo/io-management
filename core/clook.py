@@ -10,7 +10,7 @@ def clook(track_size, initial, queue, seek_rate, alpha):
 
     path = [initial] + right + left
 
-    print("\nDisk Movement Visualization (C-LOOK):")
+    print("\nC-LOOK:")
     for i, track in enumerate(path):
         if i == 0:
             print(f"Start at {track}")

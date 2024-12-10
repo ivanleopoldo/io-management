@@ -12,12 +12,15 @@ def cscan(track_size, initial, queue, seek_rate, alpha):
 
     sk = thm * seek_rate
 
-    print("\nDisk Movement Visualization (C-SCAN):")
+    print("\nC-SCAN:")
     print(f"Start at {initial}")
-    print(f"Move to {max(right)} (Distance: {max(right)- initial})")
-    print(f"Move from {max(right)} to {max_right} (Distance: {max_right - max(right)})")
-    print(f"Jump back to 0 (Distance: 20)")
-    print(f"Move from 0 to {min_left} (Distance: {min_left})")
+    for track in right:
+        if track != initial:
+            print(f"Move to {track} (Distance: {track - initial})")
+    print(f"Move to {max_right} (Distance: {max_right - max(right)})")
+    print(
+        f"Move from {max_right} to {min_left} (Distance: {max_right - min_left}, Alpha: {alpha})"
+    )
     for track in left:
         if track != min_left:
             print(f"Move to {track}")

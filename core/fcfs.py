@@ -5,7 +5,7 @@ def fcfs(track_size, initial, queue, seek_rate):
 
     sk = thm * seek_rate
 
-    print("\nDisk Movement Visualization (FCFS):")
+    print("\nFCFS:")
     for i, track in enumerate(path):
         if i == 0:
             print(f"Start at {track}")
