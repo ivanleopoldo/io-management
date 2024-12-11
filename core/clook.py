@@ -12,10 +12,14 @@ def clook(track_size, initial, queue, seek_rate, alpha):
 
     print("\nC-LOOK:")
     for i, track in enumerate(path):
-        if i == 0:
-            print(f"Start at {track}")
+        if track < track_size:
+            if i == 0:
+                print(f"Start at {track}")
+            else:
+                print(f"Move to {track} (Distance: {abs(path[i] - path[i - 1])})")
         else:
-            print(f"Move to {track} (Distance: {abs(path[i] - path[i - 1])})")
+            print("Track out of bounds")
+            break
 
     print("\nSummary:")
     print(f"Total Head Movement (THM): {thm}")
