@@ -1,11 +1,20 @@
 import json
+import os
 
 
-def openConfig(configPath="config.json"):
+def openConfig(
+    configPath=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    + "/config.json",
+):
     with open(configPath, "r") as configFile:
-        return json.load(configFile)
+        config = json.load(configFile)
+    return config
 
 
-def saveConfig(config, configPath="config.json"):
+def saveConfig(
+    config,
+    configPath=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    + "/config.json",
+):
     with open(configPath, "w") as configFile:
         json.dump(config, configFile, indent=4)
